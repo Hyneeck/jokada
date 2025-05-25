@@ -1,0 +1,13 @@
+Console.WriteLine("Ahoj!"); Thread.Sleep(1000);
+Console.WriteLine("Zadej počet vtipů pro vygenerování:");
+string cislo = Console.ReadLine();
+int pocetvtipu = Convert.ToInt32(cislo);
+int pocitadlo = 1; while (pocitadlo<= pocetvtipu)
+{ string adresaWebovky = "https://geek-jokes.sameerkumar.website/api?format=text";
+    HttpClient client = new HttpClient();
+    string odpoved = await client.GetStringAsync(adresaWebovky);
+    Console.WriteLine(odpoved); 
+    Console.WriteLine("_________________________________________________________________________________________________________________________________________________________");
+    Thread.Sleep(2000); pocitadlo += 1; }
+Console.WriteLine("Děkujeme za využití generátoru!");
+Thread.Sleep(2000);
